@@ -1,0 +1,63 @@
+Integer measured variables in Ames.CSV
+
+Id:
+
+LotFrontage: The width of the frontage area between the street and the house.
+
+LotArea: Square footage of the land on which the house sits.
+
+OverallQual: Rating 1-10 of overall quality of the house.
+
+OverallCond: Rating 1-10 of overall condition of the house.
+ 
+YearBuilt: Year the house was built.
+
+YearRemodAdd: Year the house was remodeled (If applicable)
+
+  BsmtFinSF1: Square footage of basement if finished.
+  
+  BsmtUnfSF:Square footage of basement if unfinished.
+  
+  TotalBsmtSF:Total square footage of basement.
+  
+  X1stFlrSF: First floor square footage.
+  
+  X2ndFlrSF:Second floor square footage.
+  
+  BsmtFullBath: How many full bathrooms are in the basement.
+  
+  BsmtHalfBath:How many half bathrooms are in the basement.
+  
+  FullBath:How many full bathrooms are in the house.
+  
+   HalfBath:How many half bathrooms are in the house.
+   
+   BedroomAbvGr: How many bedrooms above ground the house has.
+   
+   KitchenAbvGr: How many kitchens above ground the house has. (yes, some have more than one)
+   
+   TotRmsAbvGrd: Total number of rooms above ground the house has.
+   
+   Fireplaces: How many fireplaces the house has.
+   
+   GarageYrBlt: Year the garage was built.
+   
+   GarageCars: How many cars can fit in the garage.
+   
+  GarageArea: Total area of the garage in square feet.
+  
+  WoodDeckSF:Square footage of wood deck, if applicable.
+  
+   OpenPorchSF: Square footage of open porch, if applicable.
+   
+   EnclosedPorch:how many enclosed porches the house has.
+   
+    ScreenPorch: How many screened-in porches the house has.
+    
+    PoolArea: Area of pool, if applicable.
+    
+    MoSold: Month the house was sold (1-12, corresponding to Jan-Dec respectively.)
+    
+    YrSold: Year the house was sold
+    
+  SalePrice: Amount the house was sold for (in $)
