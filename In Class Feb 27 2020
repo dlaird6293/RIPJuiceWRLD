@@ -1,0 +1,36 @@
+library(tibble)
+library(rpart)
+library(caret)
+library(e1071)
+
+ameslist <- read.table("https://msudataanalytics.github.io/SSC442/Labs/data/ames.csv",
+                       header = TRUE,
+                       sep = ",")
+as_tibble(ameslist)
+is.factor(ameslist$ameslist)
+is.factor(ameslist$Fireplaces)
+
+ames_idx   = sample(nrow(ameslist), 730)
+ames_trn = ameslist[ames_idx, ]
+ames_tst = ameslist[-ames_idx, ]
+
+tree = rpart(Fireplaces~OverallQual+X1stFlrSF+TotalBsmtSF+GarageCars,data=ameslist)
+
+plot(tree)
+
+
+simple_class = function(x, boundary, above = 1, below = 0) {
+  ifelse(x > boundary, above, below)
+}
+
+ames_trn_pred = simple_class(x = ames_trn$Fireplaces,
+                            boundary = .5, above = "Yes", below = "No")
+ames_tst_pred = simple_class(x = ames_tst$Fireplaces,
+                                boundary = .5, above = "Yes", below = "No")
+
+
+(trn_tab = table(predicted = ames_trn_pred, actual = ames_trn$Fireplaces))
+(tst_tab = table(predicted = ames_tst_pred, actual = ames_tst$Fireplaces))
+
+trn_con_mat  = confusionMatrix(trn_tab, positive = "Yes")
+(tst_con_mat = confusionMatrix(tst_tab, positive = "Yes"))
